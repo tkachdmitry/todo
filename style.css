@@ -1,7 +1,96 @@
-.success {
-    color: gray;
+body {
+    background-color: #54adf4;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group {
+    text-align: center;
+    margin-bottom: 12px;
+}
+.control {
+    width: 300px;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px #ccc;
+    background-color: white;
+    color: #54adf4;
+    letter-spacing: 1px;
+}
+
+.field {
+    height: 22px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    outline: none;
+    background-color: transparent;
+    color: #3c88ec;
+    font-size: 18px;
+}
+::-webkit-input-placeholder {
+    color: #3c88ec;
+    font-size: 18px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 32px;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.task {
+    padding: 12px 32px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px #ccc;
+    background-color: white;
+    margin-top: 10px;
+    text-align: center;
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    /*word-wrap: break-word;*/
+}
+
+.status {
+    position: absolute;
+    right: 10px;
 }
 
 .unsuccess {
-    color: green;
+    color: #3c88ec;
+}
+
+.success {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.add {
+    font: inherit;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    margin: 2px 2px;
+    border: solid 1px transparent;
+    border-radius: 4px;
+    padding: 5px 20px;
+    color: #fff;
+    background-color: #54adf4;
+    font-size: 16px;
+    outline: none;
+}
+.add:hover,
+.add:focus {
+    color: #54adf4;
+    border-color: currentColor;
+    background-color: white;
+}
+.add:active {
+    border: solid 2px #54adf4;
+    font-weight: 700;
 }
