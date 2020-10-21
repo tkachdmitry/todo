@@ -7,14 +7,32 @@
     <title>Todo</title>
 </head>
 <body>
-<div class="block">
-    <div class="control">
-        <input placeholder="Enter your task" class="field">
-        <button class="add" type="button">+</button>
+<div class="wrapper">
+<!--TIMER-->
+    <div class="timer">
+        <h2 class="timer-title">25 minutes Timer</h2>
+        <div class="timer-numbers" id="timer-numbers">
+            <div class="minutes">25</div>
+            <span>:</span>
+            <div class="seconds">00</div>
+        </div>
+        <div class="timer-buttons">
+            <div class="timer-start-btn">START</div>
+            <div class="timer-stop-btn">STOP</div>
+        </div>
     </div>
-    <div class="list"></div>
-</div>
 
+<!--TODO-->
+    <div class="todo">
+        <div class="control">
+            <div class="form-group">
+                <input type="text" placeholder="Enter your task" class="field" maxlength="50">
+                <button class="add" type="button">+</button>
+            </div>
+        </div>
+        <div class="list"></div>
+    </div>
+</div>
 <script src="script.js"></script>
 </body>
 </html>

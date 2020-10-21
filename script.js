@@ -1,4 +1,74 @@
 'use strict'
+//
+// TIMER
+//
+let deadLine = 1500;
+const minutes = document.querySelector('.minutes');
+const seconds = document.querySelector('.seconds');
+const startBtn = document.querySelector('.timer-start-btn');
+const stopBtn = document.querySelector('.timer-stop-btn');
+let myInterval = -1;
+const plusZero = (number) => {
+    if (number <= 9) {
+        return '0' + number;
+    } else {
+        return number;
+    }
+};
+
+function resetInterval() {
+    if (deadLine < 0) {
+        minutes.textContent = '00';
+        seconds.textContent = '00';
+        stopTimer();
+    }
+}
+
+const startTimer = () => {
+    if (myInterval == -1) {
+        startBtn.innerHTML = 'PAUSE';
+
+        myInterval = setInterval(function () {
+            deadLine--;
+            const deadLineInWork = deadLine;
+            const min = Math.floor(deadLineInWork / 60);
+            const sec = Math.floor(deadLineInWork % 60);
+
+            minutes.textContent = plusZero(min);
+            seconds.innerHTML = plusZero(sec);
+            resetInterval();
+        }, 1000);
+    } else {
+        startBtn.innerHTML = 'START';
+        clearInterval(myInterval);
+        myInterval = -1;
+
+        const deadLineInWork = deadLine;
+        const min = Math.floor(deadLineInWork / 60);
+        const sec = Math.floor(deadLineInWork % 60);
+
+        minutes.textContent = plusZero(min);
+        seconds.innerHTML = plusZero(sec);
+        resetInterval();
+    }
+};
+
+function stopTimer() {
+    startBtn.innerHTML = 'START';
+    clearInterval(myInterval);
+    myInterval = -1;
+    deadLine = 1500;
+    minutes.textContent = '25';
+    seconds.innerHTML = '00';
+    resetInterval();
+}
+
+startBtn.addEventListener('click', startTimer);
+stopBtn.addEventListener('click', stopTimer);
+
+//
+// ToDo
+//
 const field = document.querySelector('.field');
 const addButton = document.querySelector('.add');
 const todoList = document.querySelector('.list');
@@ -40,4 +110,3 @@ const addTask = () => {
 }
 
 addButton.addEventListener('click', addTask);
-
